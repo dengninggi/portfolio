@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react"
 import { Link } from "react-router-dom"
 
-function Registry() {
+function ToDoList() {
     const [registryData, setRegistryData] = useState([])
     const [textInput, setTextInput] = useState("")
     const [error, setError] = useState(false)
@@ -40,10 +40,10 @@ function Registry() {
 
     return (
         <section>
-            <h1>Gift Registry</h1>
+            <h1>To Do List</h1>
             <nav>
                 <Link to="/">Home</Link>
-                <Link to="/ToDoList">To do List</Link>
+                <Link to="/registry">Registry</Link>
             </nav>
             <form onSubmit={addItem}>
                 <label>Type to add/update: &nbsp;</label>
@@ -65,4 +65,4 @@ function Registry() {
     )
 }
 
-export default Registry;
+export default ToDoList;

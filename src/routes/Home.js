@@ -3,10 +3,13 @@ import { Link } from "react-router-dom"
 
 function Home() {
     return (
-        <div>
+        <header>
             <h1>Home</h1>
-            <Link to="/registry">Click to registry</Link>
-        </div>
+            <a>
+                <Link to="/Registry">Registry</Link>
+                <Link to="/ToDoList">To Do List</Link>
+            </a>
+        </header>
     )
 }
 

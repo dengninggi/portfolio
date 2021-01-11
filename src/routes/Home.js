@@ -5,10 +5,10 @@ function Home() {
     return (
         <header>
             <h1>Home</h1>
-            <a>
+            <nav>
                 <Link to="/Registry">Registry</Link>
                 <Link to="/ToDoList">To Do List</Link>
-            </a>
+            </nav>
         </header>
     )
 }

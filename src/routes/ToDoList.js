@@ -103,10 +103,10 @@ function ToDoList() {
             }
         </section>
         <div class="description">
-            <h2>Building with ReactJS</h2>
+            <h2>Built with ReactJS</h2>
             <ul>
                 <li>React Router, form handling, State management with Redux</li>
-                <li>Update lists and with useState Hook</li>
+                <li>Update lists with useState Hook</li>
                 <li>Check input errors and completeness with Conditional Rendering by using useEffect Hook</li>
             </ul>
         </div>

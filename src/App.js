@@ -13,10 +13,10 @@ function App() {
             <Route path = "/" exact>
               <Home />
             </Route>
-            <Route path="/Registry">
+            <Route path="/registry">
               <Registry />
             </Route>
-            <Route path="/ToDoList">
+            <Route path="/todolist">
               <ToDoList />
             </Route>
           </Switch>

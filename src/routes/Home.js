@@ -6,8 +6,8 @@ function Home() {
         <header>
             <h1>Home</h1>
             <nav>
-                <Link to="/Registry">Registry</Link>
-                <Link to="/ToDoList">To Do List</Link>
+                <Link to="/registry">Registry</Link>
+                <Link to="/todolist">To Do List</Link>
             </nav>
         </header>
     )

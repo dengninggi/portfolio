@@ -43,7 +43,7 @@ function Registry() {
             <h1>Gift Registry</h1>
             <nav>
                 <Link to="/">Home</Link>
-                <Link to="/ToDoList">To do List</Link>
+                <Link to="/todolist">To do List</Link>
             </nav>
             <form onSubmit={addItem}>
                 <label>Type to add/update: &nbsp;</label>

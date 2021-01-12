@@ -17,7 +17,7 @@ function Registry() {
     }
 
     useEffect(() => {
-        if (textInput.length > 10) setError(true);
+        if (textInput.length <= 0) setError(true);
         else setError(false)
     }, [textInput])
 

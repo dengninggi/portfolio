@@ -20,12 +20,12 @@ function ToDoList() {
     }
 
     useEffect(() => {
-        if (textInput.length > 10) setError(true);
+        if (textInput.length <= 0) setError(true);
         else setError(false)
     }, [textInput])
 
     useEffect(() => {
-        if (registryData.length == 0 && doneData.length > 0) setAllDone(true);
+        if (registryData.length == 0) setAllDone(true);
         else setAllDone(false);
     }, [registryData])
 
@@ -64,13 +64,16 @@ function ToDoList() {
                 <Link to="/registry">Registry</Link>
             </nav>
             <form onSubmit={addItem}>
-                <label>Type to add/update: &nbsp;</label>
+                <label>Type here: &nbsp;</label>
                 <input type="text" value={textInput} onChange={(e) => setTextInput(e.target.value)} />
                 <input type="submit" value="Submit" />
             </form>
-            {error ? <span style={{color: "red"}}> Error occurred.</span> : <span> </span>}
-            </section>
-            <section>
+            {
+                error ? <span class = "error"> No input found! </span> : 
+                        <span class = "normal"> Click "Submit" to add/ Click "Update" to revise</span>
+            }
+        </section>
+        <section>
             <h2> To Do ({registryData.length}) </h2>
             {allDone ? <span style={{background: "green"}}> Hooray! All jobs are done! </span> : <span> </span>}
             {
@@ -99,6 +102,14 @@ function ToDoList() {
                 })
             }
         </section>
+        <div class="description">
+            <h2>Building with ReactJS</h2>
+            <ul>
+                <li>React Router, form handling, State management with Redux</li>
+                <li>Update lists and with useState Hook</li>
+                <li>Check input errors and completeness with Conditional Rendering by using useEffect Hook</li>
+            </ul>
+        </div>
         </main>
     );
 }

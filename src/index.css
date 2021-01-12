@@ -32,4 +32,14 @@ nav a:hover{
 
 label{
   color:#ffffff;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+li{
+  display:block;
+  margin: 1% 20% 1% 40%;
+  font-size: 150%;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: justify;
+  color: #0000BB;
 }

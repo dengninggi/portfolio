@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 function ToDoList() {
     const [registryData, setRegistryData] = useState([])
-    const [textInput, setTextInput] = useState("")
+    const [textInput, setTextInput] = useState("Type here")
     const [error, setError] = useState(false)
     const [doneData, setDoneData] = useState([])
     const [allDone, setAllDone] = useState(false)
@@ -39,7 +39,6 @@ function ToDoList() {
 
         let newData = [...data]
         newData[index] = textInput;
-
         setData(newData)
         setTextInput("")
     }
@@ -62,7 +61,6 @@ function ToDoList() {
                 <Link to="/registry">Registry</Link>
             </nav>
             <form onSubmit={addItem}>
-                <label>Type here: &nbsp;</label>
                 <input type="text" value={textInput} onChange={(e) => setTextInput(e.target.value)} />
                 <input type="submit" value="Submit" />
             </form>

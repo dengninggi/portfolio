@@ -58,7 +58,6 @@ function ToDoList() {
             <h1>To Do List</h1>
             <nav>
                 <Link to="/">Home</Link>
-                <Link to="/registry">Registry</Link>
             </nav>
             <form onSubmit={addItem}>
                 <input type="text" value={textInput} onChange={(e) => setTextInput(e.target.value)} />

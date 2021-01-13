@@ -1,7 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route, Link} from "react-router-dom"
 import Home from "./routes/Home"
-import Registry from "./routes/Registry"
 import ToDoList from "./routes/ToDoList"
 import './App.css';
 
@@ -12,9 +11,6 @@ function App() {
           <Switch>
             <Route path = "/" exact>
               <Home />
-            </Route>
-            <Route path="/registry">
-              <Registry />
             </Route>
             <Route path="/todolist">
               <ToDoList />

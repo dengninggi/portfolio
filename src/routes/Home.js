@@ -6,7 +6,6 @@ function Home() {
         <header>
             <h1>Home</h1>
             <nav>
-                <Link to="/registry">Registry</Link>
                 <Link to="/todolist">To Do List</Link>
             </nav>
         </header>

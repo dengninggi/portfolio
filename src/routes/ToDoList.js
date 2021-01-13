@@ -5,7 +5,6 @@ function ToDoList() {
     const [registryData, setRegistryData] = useState([])
     const [textInput, setTextInput] = useState("")
     const [error, setError] = useState(false)
-
     const [doneData, setDoneData] = useState([])
     const [allDone, setAllDone] = useState(false)
 
@@ -102,14 +101,6 @@ function ToDoList() {
                 })
             }
         </section>
-        <div class="description">
-            <h2>Built with ReactJS</h2>
-            <ul>
-                <li>React Router, form handling, State management with Redux</li>
-                <li>Update lists with useState Hook</li>
-                <li>Check input errors and completeness with Conditional Rendering by using useEffect Hook</li>
-            </ul>
-        </div>
         </main>
     );
 }

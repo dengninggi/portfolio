@@ -28,30 +28,29 @@ function ToDoList() {
         else setAllDone(false);
     }, [registryData])
 
-    // console.log(registryData)
-
-    const removeItem = (index) => {
-        let newData = [...registryData]
+    const removeItem = (index, data, setData) => {
+        let newData = [...data]
         newData.splice(index, 1)
-        setRegistryData(newData)
+        setData(newData)
     }
 
-    const editItem = (index) => {
+    const editItem = (index, data, setData) => {
         if (error) return;
 
-        let newData = [...registryData]
+        let newData = [...data]
         newData[index] = textInput;
 
-        setRegistryData(newData)
+        setData(newData)
+        setTextInput("")
     }
 
-    const moveToDone = (index) => {
-        const tempData = [...doneData]
-        tempData.push(registryData[index])
-        setDoneData(tempData)
-        let newData = [...registryData]
+    const moveData = (index, from, setFrom, to, setTo) => {
+        const tempData = [...to]
+        tempData.push(from[index])
+        setTo(tempData)
+        let newData = [...from]
         newData.splice(index, 1)
-        setRegistryData(newData)
+        setFrom(newData)
     }
 
     return (
@@ -79,10 +78,13 @@ function ToDoList() {
                 registryData.map((item, index) => {
                     return (
                         <li key={index}>
-                            <button onClick = {() => moveToDone(index)}>&nbsp;&nbsp;Done&nbsp;&nbsp;</button>
+                            <button onClick = 
+                            {
+                                () => moveData(index, registryData, setRegistryData, doneData, setDoneData)
+                            }>&nbsp;&nbsp;Done&nbsp;&nbsp;</button>
                             &nbsp; {item} &nbsp;
-                            <button onClick = {() => removeItem(index)}>Remove</button>
-                            <button onClick = {() => editItem(index)}>Update</button>
+                            <button onClick = {() => removeItem(index, registryData, setRegistryData)}>Remove</button>
+                            <button onClick = {() => editItem(index, registryData, setRegistryData)}>Update</button>
                         </li>
                     )
                 })
@@ -94,8 +96,12 @@ function ToDoList() {
                 doneData.map((item, index) => {
                     return (
                         <li key={index}>
-                            <button>Undone</button>
+                            <button onClick = {
+                                () => moveData(index, doneData, setDoneData, registryData, setRegistryData)
+                            }>Undone</button>
                             &nbsp; {item} &nbsp;
+                            <button onClick = {() => removeItem(index, doneData, setDoneData)}>Remove</button>
+                            <button onClick = {() => editItem(index, doneData, setDoneData)}>Update</button>
                         </li>
                     )
                 })

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 function ToDoList() {
     const [registryData, setRegistryData] = useState([])
-    const [textInput, setTextInput] = useState("Type here")
+    const [textInput, setTextInput] = useState("")
     const [error, setError] = useState(false)
     const [doneData, setDoneData] = useState([])
     const [allDone, setAllDone] = useState(false)
@@ -24,7 +24,7 @@ function ToDoList() {
     }, [textInput])
 
     useEffect(() => {
-        if (registryData.length == 0) setAllDone(true);
+        if (registryData.length === 0) setAllDone(true);
         else setAllDone(false);
     }, [registryData])
 
@@ -60,7 +60,7 @@ function ToDoList() {
                 <Link to="/">Home</Link>
             </nav>
             <form onSubmit={addItem}>
-                <input type="text" value={textInput} onChange={(e) => setTextInput(e.target.value)} />
+                <input type="text" value={textInput} onChange={(e) => setTextInput(e.target.value)} placeholder="Type something to do"/>
                 <input type="submit" value="Submit" />
             </form>
             {
